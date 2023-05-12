@@ -47,8 +47,13 @@ function renderInputButtons(labels, groupName) {
 
 function updateResults(){
   // Get the current selected company and role from the radio button inputs.
-  const company = document.querySelector("input[name='company']:checked").value;
-  const role = document.querySelector("input[name='role']:checked").value;
+    let company, role;
+  try {
+     company = document.querySelector("input[name='company']:checked").value;
+     role = document.querySelector("input[name='role']:checked").value;
+  } catch (error) {
+    
+  }
 
   // If either the company or role is unselected, return.
   if (!company || !role) { return; }
